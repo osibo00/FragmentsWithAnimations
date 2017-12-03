@@ -3,6 +3,7 @@ package productions.darthplagueis.fragmentswithanimations;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ public class SecondFragment extends Fragment {
 
     private View rootView;
     private TextView textView;
+    private CheckingInput checkingInput;
 
 
     public SecondFragment() {
@@ -31,7 +33,9 @@ public class SecondFragment extends Fragment {
 
         Bundle bundle = getArguments();
         String bundleText = bundle.getString("edittext");
-        textView.setText(bundleText);
+        Log.d("secondFrag", "bundle output " + bundleText);
+        checkingInput = new CheckingInput(bundleText);
+        textView.setText(checkingInput.setEditTextString());
         return rootView;
     }
 
