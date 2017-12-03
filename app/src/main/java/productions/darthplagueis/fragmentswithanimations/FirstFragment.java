@@ -39,12 +39,13 @@ public class FirstFragment extends Fragment {
                 SecondFragment secondFragment = new SecondFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.main_container, secondFragment);
+                fragmentTransaction.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("edittext", editText.getText().toString());
                 secondFragment.setArguments(bundle);
 
+                fragmentTransaction.replace(R.id.main_container, secondFragment);
                 fragmentTransaction.addToBackStack("secondFragment");
                 fragmentTransaction.commit();
             }
