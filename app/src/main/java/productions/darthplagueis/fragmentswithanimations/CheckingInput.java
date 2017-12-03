@@ -19,7 +19,7 @@ public class CheckingInput {
             case "jedi":
                 return "You're going down a path I can't follow";
             case "sith":
-                return "Have you ever heard the tradegy of darth plagueis the wise?";
+                return "Have you ever heard the tragedy of darth plagueis the wise?";
              default:
                  return editTextString;
         }
